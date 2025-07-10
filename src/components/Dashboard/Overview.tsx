@@ -211,6 +211,21 @@ const Overview: React.FC<OverviewProps> = ({ setActiveSection }) => {
         <div className="relative bg-white/80 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between space-y-6 lg:space-y-0">
             <div className="space-y-2">
+              {/* Welcome Back Greeting */}
+              <div className="mb-4">
+                <h2 className="text-lg font-medium text-gray-600 mb-1">
+                  Welcome back, <span className="text-blue-600 font-semibold">John Doe</span> 👋
+                </h2>
+                <p className="text-sm text-gray-500">
+                  {new Date().toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </p>
+              </div>
+              
               <div className="flex items-center space-x-3">
                 <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-lg">
                   <Sparkles className="h-8 w-8 text-white" />
