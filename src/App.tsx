@@ -50,7 +50,7 @@ function App() {
       />
       <div className="flex-1 flex flex-col">
         {/* Desktop Header */}
-        <Header sidebarOpen={sidebarOpen} />
+        <Header sidebarOpen={sidebarOpen} setActiveSection={setActiveSection} />
         
         {/* Mobile header */}
         <div className="lg:hidden bg-white border-b border-gray-200 p-4">

@@ -3,9 +3,10 @@ import { Search, Bell, Mail, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
   sidebarOpen: boolean;
+  setActiveSection?: (section: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ sidebarOpen }) => {
+const Header: React.FC<HeaderProps> = ({ sidebarOpen, setActiveSection }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -44,7 +45,13 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen }) => {
         {/* Notifications */}
         <div className="relative">
           <button
-            onClick={() => setShowNotifications(!showNotifications)}
+            onClick={() => {
+              if (setActiveSection) {
+                setActiveSection('notifications');
+              } else {
+                setShowNotifications(!showNotifications);
+              }
+            }}
             className="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-200"
           >
             <Bell className="h-6 w-6" />
